@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import ProjectItem from './ProjectItem';
 class Projects extends Component {
   render() {
-    let ProjectItems;
+    let projectItems;
     if(this.props.projects){
-      ProjectItems=this.props.projects.map(Project=>{
+      projectItems=this.props.projects.map(project=>{
       // console.log(Project);
-      return {
-        <ProjectItem Project={project}/>
-      }
+      return (
+        <ProjectItem key={project.title} project={project}/>
+      );
       });
     }
     return (
       <div className="Projects">
-        {ProjectItems}
+        {projectItems}
       </div>
     );
   }
