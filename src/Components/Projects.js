@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import ProjectItem from './ProjectItem';
+
 class Projects extends Component {
   render() {
-    let ProjectItems;
+    let projectitems;
     if(this.props.projects){
-      ProjectItems=this.props.projects.map(Project=>{
-      // console.log(Project);
-      return {
-        <ProjectItem Project={project}/>
-      }
+      projectitems=this.props.projects.map(project=>{
+    return(
+      /*Props(projects data) in Projects is passed to ProjectItem after mapping them*/
+        <ProjectItem key={project.title} project={project}/>
+      );
       });
     }
+
     return (
       <div className="Projects">
-        {ProjectItems}
+      {projectitems}
+
       </div>
     );
   }
