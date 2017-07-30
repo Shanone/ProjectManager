@@ -8,6 +8,7 @@ class Projects extends Component {
       projectitems=this.props.projects.map(project=>{
     return(
       /*Props(projects data) in Projects is passed to ProjectItem after mapping them*/
+
         <ProjectItem key={project.title} project={project}/>
       );
       });
@@ -16,6 +17,7 @@ class Projects extends Component {
     return (
       <div className="Projects">
       {projectitems}
+
 
       </div>
     );
